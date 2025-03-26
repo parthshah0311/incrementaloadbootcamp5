@@ -1,0 +1,9 @@
+{
+	"name": "incrementaladf33",
+	"location": "canadacentral",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "962901b0-52f0-4b77-87e2-40fb7664e58b",
+		"tenantId": "6eefac15-18e8-47a1-befc-917b9ff92e8b"
+	}
+}
