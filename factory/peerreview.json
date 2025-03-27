@@ -1,0 +1,9 @@
+{
+	"name": "peerreview",
+	"location": "canadacentral",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "a2d8d9de-11b4-4f25-a851-785ab5234fa1",
+		"tenantId": "6eefac15-18e8-47a1-befc-917b9ff92e8b"
+	}
+}
