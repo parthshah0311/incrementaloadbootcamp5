@@ -117,6 +117,67 @@
 					"referenceName": "ls_controltable",
 					"type": "LinkedServiceReference"
 				}
+			},
+			{
+				"name": "If Condition1",
+				"type": "IfCondition",
+				"dependsOn": [
+					{
+						"activity": "Stored procedure1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"expression": {
+						"value": "@and(greaterOrEquals(int(formatDateTime(convertTimeZone(utcNow(), 'UTC', 'Eastern Standard Time'),'HH')), 12), less(int(formatDateTime(convertTimeZone(utcNow(), 'UTC', 'Eastern Standard Time'),'HH')), 15))\n",
+						"type": "Expression"
+					},
+					"ifFalseActivities": [
+						{
+							"name": "Slacknotificationfailed",
+							"type": "WebActivity",
+							"dependsOn": [],
+							"policy": {
+								"timeout": "0.12:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"method": "POST",
+								"url": "https://hooks.slack.com/services/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",
+								"body": {
+									"text": "❌ Data pipeline execution FAILED "
+								}
+							}
+						}
+					],
+					"ifTrueActivities": [
+						{
+							"name": "slacknotificationpassed",
+							"type": "WebActivity",
+							"dependsOn": [],
+							"policy": {
+								"timeout": "0.12:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"method": "POST",
+								"url": "https://hooks.slack.com/services/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",
+								"body": "{\n  \"text\": \"🔔 Data pipeline execution completed successfully !\n}\n"
+							}
+						}
+					]
+				}
 			}
 		],
 		"annotations": [],
