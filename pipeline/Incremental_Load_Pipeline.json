@@ -117,12 +117,6 @@
 					"referenceName": "ls_controltable",
 					"type": "LinkedServiceReference"
 				}
-			},
-			{
-				"name": "If Condition1",
-				"type": "IfCondition",
-				"dependsOn": [],
-				"userProperties": []
 			}
 		],
 		"annotations": [],
