@@ -53,7 +53,7 @@ Switch to feature/jira-122 Development Workspace:
 
 Switch to or create the feature/jira-122 branch within ADF for development purposes.
 Peer Validation:
-![PeerValidation](https://github.com/parthshah0311/incrementaloadbootcamp5/blob/raw/images/peerview.png)
+![PeerValidation](https://github.com/parthshah0311/incrementaloadbootcamp5/raw/main/images/peerview.png)
 
 Conduct a peer review of the work in the development workspace (feature/jira-122). Ensure that a new workspace is created for feature development, or use the existing QA workspace for testing.
 Merge into Main Branch:
@@ -64,5 +64,20 @@ Publish ARM Templates in ADF Publish Branch:
 
 
 Publish the ARM templates to the publish branch of your GitHub repository for deployment.
-![PeerValidation](https://github.com/parthshah0311/incrementaloadbootcamp5/raw/main/images/pullandmergeintomain.png)
+![Pullandmerge](https://github.com/parthshah0311/incrementaloadbootcamp5/raw/main/images/pullandmergeintomain.png)
 
+Scenario 2: Time-Based Notification
+Objective:
+Configure an Azure Data Factory pipeline to send a notification if it succeeds or fails, but only between a specific time window (e.g., between 7 AM and 9 AM).
+Pipeline Setup:
+Web Activity (Success/Failure Notification):
+Use the Web Activity to trigger a notification webhook (Slack/Teams) when the pipeline succeeds or fails.
+Conditional Logic:
+Apply conditional expressions to check the current time before sending notifications, ensuring they are sent only within the specified time window.
+![Timebasedpipeline](https://github.com/parthshah0311/incrementaloadbootcamp5/raw/main/images/timebasednotificationpipeline.png)
+
+Successfully Ran:
+![SlackNotification](https://github.com/parthshah0311/incrementaloadbootcamp5/raw/main/images/slacknotification.png)
+
+
+Then Again publish everything from Feature/jira123 to main.
