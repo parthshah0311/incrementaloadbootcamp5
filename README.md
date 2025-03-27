@@ -27,7 +27,9 @@ Monitoring and Optimization: I monitor the performance of data pipelines, resolv
 Version Control & Collaboration: I manage and version my ADF pipeline code through integration with GitHub for version control, collaborating with the team to ensure best practices.
 
 Documentation & Deployment: I write clear documentation for pipeline configurations, create ARM templates for deployment, and ensure pipelines are tested and successfully merged into the main branch.
-https://github.com/parthshah0311/incrementaloadbootcamp5/raw/main/images/Resourcegroup.png
+
+![MyResource](https://github.com/parthshah0311/incrementaloadbootcamp5/raw/main/images/Resourcegroup.png)
+
 Scenario 1: Incrementally Load Data and Mark as Processed
 Objective:
 Incrementally load data from an external system into Azure SQL Database. After each load, a stored procedure will execute to mark the records as processed or update the status in a tracking table.
@@ -39,6 +41,8 @@ Ingest new records from the external system based on the timestamp.
 Stored Procedure Activity:
 Execute a stored procedure to update the control table and mark records as processed in the destination database.
 
+![IncrementalPipeline](https://github.com/parthshah0311/incrementaloadbootcamp5/raw/main/images/incrementalpipeline.png)
+
 Phase 1 - Changes for Scenario 1
 Connect to GitHub Repo:
 
@@ -49,7 +53,7 @@ Switch to feature/jira-122 Development Workspace:
 
 Switch to or create the feature/jira-122 branch within ADF for development purposes.
 Peer Validation:
-
+![PeerValidation](https://github.com/parthshah0311/incrementaloadbootcamp5/blob/raw/images/peerview.png)
 
 Conduct a peer review of the work in the development workspace (feature/jira-122). Ensure that a new workspace is created for feature development, or use the existing QA workspace for testing.
 Merge into Main Branch:
@@ -60,3 +64,5 @@ Publish ARM Templates in ADF Publish Branch:
 
 
 Publish the ARM templates to the publish branch of your GitHub repository for deployment.
+![PeerValidation](https://github.com/parthshah0311/incrementaloadbootcamp5/raw/main/images/pullandmergeintomain.png)
+
