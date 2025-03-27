@@ -132,7 +132,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"expression": {
-						"value": "@and(\n    greaterOrEquals(utcNow(), '07:00:00'),\n    lessOrEquals(utcNow(), '09:00:00')\n)\n",
+						"value": "@and(greaterOrEquals(int(formatDateTime(convertTimeZone(utcNow(), 'UTC', 'Eastern Standard Time'),'HH')), 12), less(int(formatDateTime(convertTimeZone(utcNow(), 'UTC', 'Eastern Standard Time'),'HH')), 15))\n",
 						"type": "Expression"
 					},
 					"ifFalseActivities": [
@@ -150,16 +150,16 @@
 							"userProperties": [],
 							"typeProperties": {
 								"method": "POST",
-								"url": "https://hooks.slack.com/services/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",
+								"url": "https://hooks.slack.com/services/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",
 								"body": {
-									"text": "❌ Data pipeline execution FAILED at @ {utcNow()}."
+									"text": "❌ Data pipeline execution FAILED "
 								}
 							}
 						}
 					],
 					"ifTrueActivities": [
 						{
-							"name": "slacknotification",
+							"name": "slacknotificationpassed",
 							"type": "WebActivity",
 							"dependsOn": [],
 							"policy": {
@@ -172,10 +172,11 @@
 							"userProperties": [],
 							"typeProperties": {
 								"method": "POST",
-								"url": "https://hooks.slack.com/services/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",
-								"body": {
-									"text": "🔔 Data pipeline execution completed successfully at @ {utcNow()}."
-								}
+								"headers": {
+									"application": "json"
+								},
+								"url": "https://hooks.slack.com/services/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",
+								"body": "{\n  \"text\": \"🔔 Data pipeline execution completed successfully !\n}\n"
 							}
 						}
 					]
