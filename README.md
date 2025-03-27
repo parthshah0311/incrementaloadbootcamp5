@@ -8,4 +8,4 @@ Incremental Data Load and Process Tracking: Load data incrementally into Azure S
 Time-Based Notification: Send a notification if the pipeline succeeds or fails during a specific time window.
 Data Ingestion and Team Notification: Ingest data from an SQL database into Azure Data Lake Storage and notify the data engineering team via Slack/Teams.
 
-![Alt text](Incremental Data Loading and Notifications.jpg)
+![Architecture Diagram](https://github.com/parthshah0311/incrementaloadbootcamp5/raw/main/Incremental%20Data%20Loading%20and%20Notifications.jpg))
