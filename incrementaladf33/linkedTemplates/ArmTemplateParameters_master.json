@@ -1,0 +1,51 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "incrementaladf33"
+		},
+		"ls_controltable_password": {
+			"value": ""
+		},
+		"ls_prcsdsalesdata_password": {
+			"value": ""
+		},
+		"ls_salesdata_password": {
+			"value": ""
+		},
+		"ls_controltable_properties_typeProperties_server": {
+			"value": "controlserver.database.windows.net"
+		},
+		"ls_controltable_properties_typeProperties_database": {
+			"value": "controldatabase"
+		},
+		"ls_controltable_properties_typeProperties_userName": {
+			"value": "parth"
+		},
+		"ls_prcsdsalesdata_properties_typeProperties_server": {
+			"value": "controlserver.database.windows.net"
+		},
+		"ls_prcsdsalesdata_properties_typeProperties_database": {
+			"value": "controldatabase"
+		},
+		"ls_prcsdsalesdata_properties_typeProperties_userName": {
+			"value": "parth"
+		},
+		"ls_salesdata_properties_typeProperties_server": {
+			"value": "controlserver.database.windows.net"
+		},
+		"ls_salesdata_properties_typeProperties_database": {
+			"value": "controldatabase"
+		},
+		"ls_salesdata_properties_typeProperties_userName": {
+			"value": "parth"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}

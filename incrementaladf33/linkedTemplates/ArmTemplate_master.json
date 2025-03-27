@@ -1,0 +1,126 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "incrementaladf33"
+		},
+		"ls_controltable_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'ls_controltable'"
+		},
+		"ls_prcsdsalesdata_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'ls_prcsdsalesdata'"
+		},
+		"ls_salesdata_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'ls_salesdata'"
+		},
+		"ls_controltable_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "controlserver.database.windows.net"
+		},
+		"ls_controltable_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "controldatabase"
+		},
+		"ls_controltable_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "parth"
+		},
+		"ls_prcsdsalesdata_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "controlserver.database.windows.net"
+		},
+		"ls_prcsdsalesdata_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "controldatabase"
+		},
+		"ls_prcsdsalesdata_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "parth"
+		},
+		"ls_salesdata_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "controlserver.database.windows.net"
+		},
+		"ls_salesdata_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "controldatabase"
+		},
+		"ls_salesdata_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "parth"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "incrementaladf33_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"ls_controltable_password": {
+						"value": "[parameters('ls_controltable_password')]"
+					},
+					"ls_prcsdsalesdata_password": {
+						"value": "[parameters('ls_prcsdsalesdata_password')]"
+					},
+					"ls_salesdata_password": {
+						"value": "[parameters('ls_salesdata_password')]"
+					},
+					"ls_controltable_properties_typeProperties_server": {
+						"value": "[parameters('ls_controltable_properties_typeProperties_server')]"
+					},
+					"ls_controltable_properties_typeProperties_database": {
+						"value": "[parameters('ls_controltable_properties_typeProperties_database')]"
+					},
+					"ls_controltable_properties_typeProperties_userName": {
+						"value": "[parameters('ls_controltable_properties_typeProperties_userName')]"
+					},
+					"ls_prcsdsalesdata_properties_typeProperties_server": {
+						"value": "[parameters('ls_prcsdsalesdata_properties_typeProperties_server')]"
+					},
+					"ls_prcsdsalesdata_properties_typeProperties_database": {
+						"value": "[parameters('ls_prcsdsalesdata_properties_typeProperties_database')]"
+					},
+					"ls_prcsdsalesdata_properties_typeProperties_userName": {
+						"value": "[parameters('ls_prcsdsalesdata_properties_typeProperties_userName')]"
+					},
+					"ls_salesdata_properties_typeProperties_server": {
+						"value": "[parameters('ls_salesdata_properties_typeProperties_server')]"
+					},
+					"ls_salesdata_properties_typeProperties_database": {
+						"value": "[parameters('ls_salesdata_properties_typeProperties_database')]"
+					},
+					"ls_salesdata_properties_typeProperties_userName": {
+						"value": "[parameters('ls_salesdata_properties_typeProperties_userName')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}
