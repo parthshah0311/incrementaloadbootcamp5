@@ -150,7 +150,7 @@
 							"userProperties": [],
 							"typeProperties": {
 								"method": "POST",
-								"url": "https://hooks.slack.com/services/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",
+								"url": "https://hooks.slack.com/services/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",
 								"body": {
 									"text": "❌ Data pipeline execution FAILED "
 								}
@@ -172,10 +172,7 @@
 							"userProperties": [],
 							"typeProperties": {
 								"method": "POST",
-								"headers": {
-									"application": "json"
-								},
-								"url": "https://hooks.slack.com/services/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",
+								"url": "https://hooks.slack.com/services/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",
 								"body": "{\n  \"text\": \"🔔 Data pipeline execution completed successfully !\n}\n"
 							}
 						}
